@@ -1,0 +1,38 @@
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.header{
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.logo{
+  width: 600px;
+  height: 90px;
+  margin-top: -10px;
+  overflow: hidden;
+  margin-left:-65px
+}
+.btnBox{
+  width:8%;
+  margin-right: 0;
+  position: absolute;
+  right: 2%;
+  ;
+}
+.btn{
+  width:100%;
+
+}
+.fontBox{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
