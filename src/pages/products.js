@@ -100,7 +100,7 @@ class products extends Component {
               <span> </span>
               <span>
                 <Popconfirm title="Delete?" onConfirm={() => onDelete(record._id)}>
-                  <Button type="danger" style={{ width: '35%', textAlign: 'center' }} icon="delete"></Button>
+                  <Button type='danger' style={{ width: '35%', textAlign: 'center' }} icon='delete'/>
                 </Popconfirm>
               </span>
             </div>
