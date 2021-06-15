@@ -11,6 +11,7 @@ export default {
   },
   effects:{
     *login({payload},{call,put}){
+      console.log(payload);
       const result=yield call(log,payload)
       if(result.data.code===1){
         if(isLogined()) {

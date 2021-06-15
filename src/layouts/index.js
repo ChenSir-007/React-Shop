@@ -130,7 +130,7 @@ function BasicLayout(props) {
               title={
                 <span>
                   <Icon type="appstore" />
-                  <span>订单操作</span>
+                  <span>评论操作</span>
                 </span>
               }
             >
@@ -138,65 +138,27 @@ function BasicLayout(props) {
                 key="9"
                 onClick={() => {
                   if (isLogined()) {
-                    router.replace('/orders');
+                    router.replace('/test');
                   }else{
                         message.warning("请管理员先登录")
                       }
                 }}
               >
-                全部订单
+                评论过滤
               </Menu.Item>
               <Menu.Item
                 key="10"
                 onClick={() => {
                   if (isLogined()) {
-                    router.replace('/Aorders');
+                    router.replace('/test');
                   }else{
                         message.warning("请管理员先登录")
                       }
                 }}
               >
-                已销售订单
+                评论报告
               </Menu.Item>
-              <Menu.Item
-                key="11"
-                onClick={() => {
-                  if (isLogined()) {
-                    router.replace('/Borders');
-                  }else{
-                        message.warning("请管理员先登录")
-                      }
-                }}
-              >
-                 未付款订单
-              </Menu.Item>
-              <SubMenu key="sub3" title="业绩分析">
-                <Menu.Item
-                  key="12"
-                  onClick={() => {
-                    if (isLogined()) {
-                      router.replace('/test');
-                    }else{
-                          message.warning("请管理员先登录")
-                        }
-                  }}
-                >
-                  商品销售分析
-                </Menu.Item>
-                <Menu.Item
-                  key="13"
-                  onClick={() => {
-                    if (isLogined()) {
-                      router.replace('/mine');
-                    }else{
-                          message.warning("请管理员先登录")
-                        }
-                  }}
-                >
-                  生成分析报告
-                </Menu.Item>
               </SubMenu>
-            </SubMenu>
           </Menu>
         </Sider>
         <Layout style={{ marginLeft: 250,marginTop:65}}>

@@ -38,16 +38,11 @@ export const users =()=>{
 
 //获取分类列表
 export const categories =()=>{
-  return instance.GET('/api/category')
-}
-
-//获取已售订单列表
-export const Aorders =()=>{
-  return instance.GET('/api/order/allO')
-}
-//获取已售订单列表
-export const Borders =()=>{
-  return instance.GET('/api/cart/allC')
+  return request('/api/category', {
+    method:'get',
+  }).then(function (response){
+    return response;
+  })
 }
 
 // 删除所选商品
@@ -63,7 +58,11 @@ export const Detail=(id)=>{
 
 // 获取商品分类
 export const Category=(id)=>{
-  return instance.GET("/api/category")
+  return request('/api/category', {
+    method:'get',
+  }).then(function (response){
+    return response;
+  })
 }
 
 // 修改商品详情

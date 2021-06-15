@@ -43,15 +43,9 @@ class edit extends React.Component {
             id: this.props.product.data._id,
             title: values.title,
             name: values.name,
-            imgUrlall: this.props.product.data.imgUrlall,
-            OriginPrice: values.OriginPrice,
+            OriginPrice:values.OriginPrice,
             Num: this.props.product.data.Num,
-            Num1: this.props.product.data.Num1,
-            Num2: this.props.product.data.Num2,
-            Num3: this.props.product.data.Num3,
-            sizeAll: this.props.product.data.sizeAll,
             imgUrl: this.state.imgUrl,
-            Numb: this.props.product.data.Numb,
           },
         });
       }
