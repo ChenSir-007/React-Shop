@@ -17,9 +17,10 @@ class edit extends React.Component {
 
   componentDidMount() {
     // 挂载完成的this.props里面的location的search属性就有啦
-    // console.log('传来的props', this.props);
+    console.log('传来的props', this.props);
     const searchParams = new URLSearchParams(this.props.location.search);
     const id = searchParams.get('id');
+    // console.log(id);
     this.props.dispatch({
       type: 'editor/detail',
       payload: { id },
