@@ -15,6 +15,7 @@ const Test = () => {
     comment : comment.comment,
     loading : comment.loading
   }))
+  // const [data,setData] = useState(...comment);
   // console.log(loading);
   const like = () => {
     setLikes(1);
@@ -27,7 +28,11 @@ const Test = () => {
     setAction('disliked')
   }
   const onChange = (checked) =>{
-    console.log(`switch to ${checked}`)
+    if(checked === true){
+      dispatch({type:'comment/loadNewData'})
+    }else{
+      dispatch({type:'comment/loadData'})
+    }
   }
   const actions = [
     <span key="comment-basic-like">

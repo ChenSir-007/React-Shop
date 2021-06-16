@@ -66,7 +66,7 @@ class add extends React.Component {
       this.setState({
         imgUrl: 'http://192.168.0.108:1314' + e.file.response.file,
       });
-     // console.log(this.state.imgUrl)
+     console.log('http://192.168.0.108:1314' + e.file.response.file)
     }
 
 

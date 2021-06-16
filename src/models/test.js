@@ -29,11 +29,11 @@ export default({
     *loadNewData({payload},{call,put}){
       yield put({type:'showLoading'});
       const result =yield call(Filter);
-      // console.log(result,result.data)
+      console.log(result,result.data)
       yield put({
         type: 'save',
         payload: {
-          filter: result.data,
+          comment: result.data,
         },
       });
     }
