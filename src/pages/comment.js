@@ -3,7 +3,7 @@ import { Comment, Icon, Tooltip, Switch, List } from 'antd';
 // import moment from 'moment';
 import { useDispatch, useSelector} from 'dva';
 
-const Test = () => {
+const CommentFilter = () => {
   const dispatch = useDispatch();
   const [likes,setLikes] = useState(0);
   const [dislikes,setDislikes] = useState(0);
@@ -81,4 +81,4 @@ const Test = () => {
   );
 }
 
-export default Test;
+export default CommentFilter;

@@ -138,7 +138,7 @@ function BasicLayout(props) {
                 key="9"
                 onClick={() => {
                   if (isLogined()) {
-                    router.replace('/test');
+                    router.replace('/comment');
                   }else{
                         message.warning("请管理员先登录")
                       }
@@ -150,7 +150,7 @@ function BasicLayout(props) {
                 key="10"
                 onClick={() => {
                   if (isLogined()) {
-                    router.replace('/test');
+                    router.replace('/comment');
                   }else{
                         message.warning("请管理员先登录")
                       }
