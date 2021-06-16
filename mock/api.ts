@@ -61,7 +61,38 @@ export default {
         _id: 2,
         name: '电子产品'
       }]
-  }
+  },
+
+  '/api/comment/origin':{
+    data:[
+      {
+        comment:'产品真好'
+      },
+      {
+        comment:'这个东西太差了'
+      },
+      {
+        comment: '哇，这是什么神仙好物'
+      },
+      {
+        comment: '用户默认好评'
+      }
+    ]
+  },
+
+  '/api/comment/new':{
+    data:[
+      {
+        comment:'产品真好'
+      },
+      {
+        comment:'这个东西太差了'
+      },
+      {
+        comment: '哇，这是什么神仙好物'
+      },
+    ]
+  },
 
   // // GET 可忽略
   // '/api/users/1': { id: 1 },

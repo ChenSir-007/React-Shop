@@ -79,3 +79,21 @@ export const Add=(product)=>{
 export const Cate=(kind)=>{
     return instance.PUT("/api/type",kind)
 }
+
+//获取评论列表(过滤前)
+export const Comment = ()=>{
+  return request('/api/comment/origin', {
+    method:'get',
+  }).then(function (response){
+    return response;
+  })
+}
+
+//获取评论列表(过滤后)
+export const Filter = ()=>{
+  return request('/api/comment/new', {
+    method:'get',
+  }).then(function (response){
+    return response;
+  })
+}

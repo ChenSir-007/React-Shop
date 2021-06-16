@@ -8,3 +8,6 @@ body {
 .ant-select-dropdown{
   z-index: 0;
 }
+.ant-switch{
+  right: -90%;
+}
