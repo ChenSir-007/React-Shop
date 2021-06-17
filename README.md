@@ -1,1 +1,1 @@
-# React-MangoStore
+# React-Shop

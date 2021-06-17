@@ -60,6 +60,7 @@ class products extends Component {
         align: 'center',
         width: '20%',
         ellipsis: true,
+        render: text => <a onClick={()=>(router.replace('/comment'))}>{text}</a>
       },
       {
         title: '商品图',
@@ -117,6 +118,7 @@ class products extends Component {
           rowKey={record => record.id}
           loading={loading}
           bordered
+          // onRowClick={router.replace('/comment')}
         />
         ,
       </div>

@@ -6,7 +6,7 @@
 
 .welcome {
   height: 512px;
-  background: url(../assets/yay.jpg) no-repeat center 0;
+  background: url(../assets/welcome.png) no-repeat center 0;
   background-size: 512px 512px;
 }
 

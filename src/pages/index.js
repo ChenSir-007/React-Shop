@@ -2,6 +2,6 @@ import styles from '../styles/index.css';
 
 export default function() {
   return (
-      <div className={styles.welcome} />
+    <div className={styles.welcome}/>
   );
 }
