@@ -2,10 +2,12 @@ import * as instance from "../utils/authAxios"
 import request from 'umi-request';
 //获取登录接口
 export const log = (params)=>{
-  return request('/api/customer/login', {
+  console.log(params);
+  return request('http://cxsj.dempseydreamloong.top/api/customer/login', {
     method:'get',
-    data:params,
+    params,
     }).then(function (response){
+    // console.log(response);
       return response;
   })
 }
@@ -20,7 +22,7 @@ export const list =()=>{
       })
     },10000)
   }) */
-  return request('/api/detail', {
+  return request('http://cxsj.dempseydreamloong.top/api/product/detail', {
     method:'get',
   }).then(function (response){
     return response;
@@ -29,7 +31,7 @@ export const list =()=>{
 
 //获取用户列表
 export const users =()=>{
-  return request('/api/customer/user', {
+  return request('http://cxsj.dempseydreamloong.top/api/customer/list', {
     method:'get',
   }).then(function (response){
     return response;
@@ -38,27 +40,37 @@ export const users =()=>{
 
 //获取分类列表
 export const categories =()=>{
-  return request('/api/category', {
+  return request('http://cxsj.dempseydreamloong.top/api/category/list', {
     method:'get',
   }).then(function (response){
+    console.log(response);
     return response;
   })
 }
 
 // 删除所选商品
-export const Dele=(id)=>{
-  // console.log("ww")
-  return instance.POST("/api/crud",id)
+export const Dele =(id)=>{
+  // console.log(id)
+  return request(`http://cxsj.dempseydreamloong.top/api/product/crud?id=${ id.id }`, {
+    method:'put',
+  }).then(function (response){
+    return response;
+  })
 }
 
 // 获取商品详情
-export const Detail=(id)=>{
-  return instance.GET("/api/crud/"+id)
+export const Detail =(id)=>{
+  return request('http://cxsj.dempseydreamloong.top/api/product/crud/'+id, {
+    method:'get',
+  }).then(function (response){
+    // console.log(response);
+    return response;
+  })
 }
 
 // 获取商品分类
 export const Category=(id)=>{
-  return request('/api/category', {
+  return request('http://cxsj.dempseydreamloong.top/api/category/list', {
     method:'get',
   }).then(function (response){
     return response;
@@ -66,8 +78,15 @@ export const Category=(id)=>{
 }
 
 // 修改商品详情
-export const ChangeDetail=(id)=>{
-  return instance.PUT("/api/crud/change",id)
+export const ChangeDetail =(id)=>{
+  console.log(id);
+  return request('http://cxsj.dempseydreamloong.top/api/product/crud/change', {
+    method:'put',
+    data:id,
+  }).then(function (response){
+    // console.log(response);
+    return response;
+  })
 }
 
 // 新增商品
@@ -76,13 +95,18 @@ export const Add=(product)=>{
 }
 
 // 修改商品分类
-export const Cate=(kind)=>{
-    return instance.PUT("/api/type",kind)
+export const Cate = (kind)=>{
+  console.log(kind);
+  return request(`http://cxsj.dempseydreamloong.top/api/category/type?kind=${kind.id}&name=${kind.name}`, {
+    method:'put',
+  }).then(function (response){
+    return response;
+  })
 }
 
 //获取评论列表(过滤前)
 export const Comment = ()=>{
-  return request('/api/comment/origin', {
+  return request('http://cxsj.dempseydreamloong.top/api/comment/origin', {
     method:'get',
   }).then(function (response){
     return response;
@@ -91,7 +115,7 @@ export const Comment = ()=>{
 
 //获取评论列表(过滤后)
 export const Filter = ()=>{
-  return request('/api/comment/new', {
+  return request('http://cxsj.dempseydreamloong.top/api/comment/new', {
     method:'get',
   }).then(function (response){
     return response;

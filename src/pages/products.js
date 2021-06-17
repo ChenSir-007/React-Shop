@@ -70,7 +70,7 @@ class products extends Component {
       },
       {
         title: '价格',
-        dataIndex: 'OriginPrice',
+        dataIndex: 'originPrice',
         align: 'center',
         width: '20%',
       },
@@ -88,7 +88,7 @@ class products extends Component {
           return (
             <div>
               <span>
-                <Popconfirm title="Edit?" onConfirm={() => onClick(record._id)}>
+                <Popconfirm title="Edit?" onConfirm={() => onClick(record.id)}>
                   <Button
                     type="primary"
                     style={{ width: '35%', textAlign: 'center' }}
@@ -99,7 +99,7 @@ class products extends Component {
               </span>
               <span> </span>
               <span>
-                <Popconfirm title="Delete?" onConfirm={() => onDelete(record._id)}>
+                <Popconfirm title="Delete?" onConfirm={() => onDelete(record.id)}>
                   <Button type='danger' style={{ width: '35%', textAlign: 'center' }} icon='delete'/>
                 </Popconfirm>
               </span>
@@ -114,7 +114,7 @@ class products extends Component {
         <Table
           columns={columns}
           dataSource={products}
-          rowKey={record => record._id}
+          rowKey={record => record.id}
           loading={loading}
           bordered
         />

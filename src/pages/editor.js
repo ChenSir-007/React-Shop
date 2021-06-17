@@ -17,7 +17,7 @@ class edit extends React.Component {
 
   componentDidMount() {
     // 挂载完成的this.props里面的location的search属性就有啦
-    console.log('传来的props', this.props);
+    // console.log('传来的props', this.props);
     const searchParams = new URLSearchParams(this.props.location.search);
     const id = searchParams.get('id');
     // console.log(id);
@@ -36,17 +36,16 @@ class edit extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         // console.log('Received values of form: ', values);
-        // console.log(this.props);
+        // console.log(this.props.product[0].title);
         // console.log(this.state.imgUrl);
         this.props.dispatch({
           type: 'editor/change',
           payload: {
-            id: this.props.product.data._id,
+            id: this.props.product[0].id,
             title: values.title,
             name: values.name,
-            OriginPrice:values.OriginPrice,
-            Num: this.props.product.data.Num,
-            imgUrl: this.state.imgUrl,
+            originPrice:values.OriginPrice,
+            num: this.props.product[0].num,
           },
         });
       }
@@ -63,13 +62,14 @@ class edit extends React.Component {
     return e.file && e.fileList;
   };
 
-  getTitle = e => {
-    // console.log('详情后的', this.props);
-    const { product } = this.props;
-    this.props.form.setFieldsValue({
-      title: product.data.title,
-    })
-  };
+  // getTitle = e => {
+  //   // console.log(e);
+  //   console.log('详情后的', this.props);
+  //   const { product } = this.props;
+  //   this.props.form.setFieldsValue({
+  //     title: product.data.title,
+  //   })
+  // };
   getMenu = e => {
     // console.log('详情后的', this.props);
   };
@@ -87,6 +87,16 @@ class edit extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     const { menu } = this.props;
+    // console.log(menu);
+    const getTitle = e => {
+      // console.log(e);
+      // console.log('详情后的', this.props);
+      const { product } = this.props;
+      // console.log(product)
+      this.props.form.setFieldsValue({
+        title: product[0].title,
+      })
+    };
     const formItemLayout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 11 },
@@ -100,7 +110,7 @@ class edit extends React.Component {
         <Form.Item label="商品名">
           {getFieldDecorator('title', {
             rules: [{ required: true, message: '必填' }],
-          })(<Input onFocus={this.getTitle} />)}
+          })(<Input onFocus={getTitle} />)}
         </Form.Item>
         <br />
         <Form.Item label="种类" hasFeedback>
@@ -109,7 +119,7 @@ class edit extends React.Component {
           })(
             <Select placeholder="Please select a category" onFocus={this.getMenu}>
               {menu.map(item => (
-                <Select.Option key={item._id} value={item.name}>
+                <Select.Option key={item.id} value={item.name}>
                   {item.name}
                 </Select.Option>
               ))}

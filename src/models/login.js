@@ -11,18 +11,19 @@ export default {
   },
   effects:{
     *login({payload},{call,put}){
-      console.log(payload);
+      // console.log(payload);
       const result=yield call(log,payload)
-      if(result.data.code===1){
+      console.log(result.errorCode);
+      if(result.errorCode===0){
         if(isLogined()) {
           message.success(
-                `${payload.name}欢迎您~`
+                `${payload.username}欢迎您~`
               );
               yield put(routerRedux.replace("/"))
         } else {
-          login(result.data._id)
+          login(result._id)
           message.success(
-                `${payload.name}欢迎您~`
+                `${payload.username}欢迎您~`
               );
               yield put(routerRedux.replace("/"))
         }

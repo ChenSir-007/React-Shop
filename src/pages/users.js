@@ -55,7 +55,7 @@ class users extends Component {
     return (
 
       <div>
-        <Table columns={columns} dataSource={products} rowKey={record => record._id} loading={loading} bordered />,
+        <Table columns={columns} dataSource={products} rowKey={record => record.id} loading={loading} bordered />,
       </div>
     );
   }

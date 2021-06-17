@@ -73,7 +73,7 @@ class EditableTable extends React.Component {
                 {form => (
                   <a
                     onClick={() => {
-                      this.save(form, record._id);
+                      this.save(form, record.id);
                     }}
                     style={{ marginRight: 8 }}
                   >
@@ -81,12 +81,12 @@ class EditableTable extends React.Component {
                   </a>
                 )}
               </EditableContext.Consumer>
-              <Popconfirm title="Sure to cancel?" onConfirm={() => this.cancel(record._id)}>
+              <Popconfirm title="Sure to cancel?" onConfirm={() => this.cancel(record.id)}>
                 <a>Cancel</a>
               </Popconfirm>
             </span>
           ) : (
-            <a disabled={editingKey !== ''} onClick={() => this.edit(record._id)}>
+            <a disabled={editingKey !== ''} onClick={() => this.edit(record.id)}>
               编辑
             </a>
           );
@@ -102,7 +102,7 @@ class EditableTable extends React.Component {
     });
   }
 
-  isEditing = record => record._id === this.state.editingKey;
+  isEditing = record => record.id === this.state.editingKey;
 
   cancel = () => {
     this.setState({ editingKey: '' });
@@ -163,7 +163,7 @@ class EditableTable extends React.Component {
           bordered
           dataSource={this.props.category}
           columns={columns}
-          rowKey={record => record._id}
+          rowKey={record => record.id}
           rowClassName="editable-row"
           pagination={{
             onChange: this.cancel,

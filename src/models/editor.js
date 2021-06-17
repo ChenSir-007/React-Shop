@@ -21,6 +21,7 @@ export default {
   },
   effects: {
     *detail({ payload }, { call, put }) {
+      // console.log(payload.id)
       const result = yield call(Detail, payload.id);
       yield put({
         type: 'editor',
@@ -41,6 +42,7 @@ export default {
         });
       },
     *change({payload},{call,put}){
+      console.log(payload);
       const result=yield call(ChangeDetail,payload);
       console.log(result)
       yield put({

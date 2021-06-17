@@ -25,7 +25,7 @@ class product extends Component {
 
   render() {
     const { products ,loading} = this.props;
-    // console.log(products)
+    console.log(products)
     const columns = [
       {
         title: '商品名',
@@ -43,7 +43,7 @@ class product extends Component {
       },
       {
         title: '价格',
-        dataIndex: 'OriginPrice',
+        dataIndex: 'originPrice',
         align: 'center',
         width: "20%",
       },

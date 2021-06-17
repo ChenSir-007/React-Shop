@@ -27,7 +27,7 @@ class loginBtn extends Component {
       dispatch({
         type: 'login/login',
         payload: {
-          name: values.userName,
+          username: values.userName,
           password: values.password,
         },
       });

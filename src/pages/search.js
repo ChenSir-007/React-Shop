@@ -143,7 +143,7 @@ class search extends React.Component {
             >
               <Meta
                 title={item.title}
-                description={'剩余数量：' + item.Num + '   ，现价：' + item.OriginPrice}
+                description={'剩余数量：' + item.num + '   ，现价：' + item.originPrice}
               />
             </Card>
           );
